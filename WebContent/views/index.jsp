@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <meta charset="UTF-8">
@@ -12,7 +11,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-
 <body>
 	<div class="container">
 		<div class="row my-4">
@@ -54,13 +52,14 @@
 				$.ajax({
 					url:'/lunch',
 					method:'post',
-					data:{data:data} {
-						console.log(data);'
+				success: function(data) {
+					alert(data.msg);
+					if(data.result) {
+						$("#menuList").empty();
+						$("#menuList").append(data.menu);
 					}
-				})
+				}
 			});
-		});
 	</script>
 </body>
-
 </html>
